@@ -888,7 +888,7 @@ body ul, body li {
   z-index: 1;
 }
 .countdownSection .container .counterWrapper p {
-  background-image: url('gir.gif');
+  background-image: url('./gir.gif');
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
