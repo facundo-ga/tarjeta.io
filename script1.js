@@ -1,16 +1,20 @@
 
 
-document.getElementById("playButton").addEventListener("click", function () {
-  const audio = document.getElementById("villancicoAudio");
-  if (audio.paused) {
-    audio.play();
-    this.textContent = "⏸ Pausar Villancicos";
-  } else {
-    audio.pause();
-    this.textContent = "🎶 Reproducir Villancicos";
-  }
-});
+  window.onload = function () {
+    const audio = document.getElementById('villancicoAudio');
 
+    // Intenta reproducir automáticamente
+    audio.play().catch((error) => {
+      console.log('Reproducción automática bloqueada por el navegador.');
+
+      // Muestra un mensaje al usuario para activar el audio
+      const playButton = document.getElementById('playButton');
+      playButton.style.display = 'block'; // Asegúrate de que el botón sea visible
+      playButton.addEventListener('click', () => {
+        audio.play();
+      });
+    });
+  };
 function createGarland() {
   const garland = document.createElement("div");
   garland.classList.add("garland");
