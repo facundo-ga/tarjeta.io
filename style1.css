@@ -1031,23 +1031,23 @@ body ul, body li {
 @media (max-width: 600px) {
   .buttonContainer {
     position: fixed;
-    top: 5px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9999;
-    position: absolute;
+    z-index: 99999;
     width: 100%;
   }
 
   .playButton {
-    position: absolute;
-    top: 10px;
+    position: relative; /* Relativo al contenedor */
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
-    position: absolute;
-    z-index: 9999;
+    z-index: 99999;
+
   }
 }
+
 
 
 .garland {
