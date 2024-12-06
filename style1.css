@@ -1028,10 +1028,10 @@ body ul, body li {
 }
 
 /* Media query para pantallas pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .buttonContainer {
     position: fixed;
-    top: 10px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 99999;
