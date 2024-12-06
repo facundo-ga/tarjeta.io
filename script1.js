@@ -1,24 +1,26 @@
 window.onload = function () {
-    const audio = document.getElementById('villancicoAudio');
+  const audio = document.getElementById("villancicoAudio");
+  const playButton = document.getElementById("playButton");
 
-    // Mostrar un cuadro de confirmación para preguntar al usuario
-    const playAudio = confirm("¿Deseas reproducir el villancico? 🎶");
+  // Intenta reproducir automáticamente
+  audio.play().catch((error) => {
+    console.log("Reproducción automática bloqueada por el navegador.");
+    // Muestra el botón si la reproducción automática está bloqueada
+    playButton.style.display = "block";
 
-    if (playAudio) {
-      audio.play().catch((error) => {
-        console.log("No se pudo reproducir automáticamente debido a restricciones del navegador.");
-      });
-    } else {
-      console.log("El usuario canceló la reproducción.");
-    }
-
-    // Mostrar el botón si el usuario desea reproducir después
-    const playButton = document.getElementById('playButton');
-    playButton.style.display = 'block';
-    playButton.addEventListener('click', () => {
-      audio.play();
+    // Escucha el clic del usuario para reproducir el audio
+    playButton.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "⏸️ Pausar Villancicos"; // Cambia el texto del botón
+      } else {
+        audio.pause();
+        playButton.textContent = "🎶 Reproducir Villancicos"; // Cambia el texto del botón
+      }
     });
-  };
+  });
+};
+
 function createGarland() {
   const garland = document.createElement("div");
   garland.classList.add("garland");
