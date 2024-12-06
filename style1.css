@@ -888,7 +888,8 @@ body ul, body li {
   z-index: 1;
 }
 .countdownSection .container .counterWrapper p {
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/fotos-3cba1.appspot.com/o/navidad%2Fpattern-2.jpg?alt=media&token=c3ebea10-d285-4b2a-846b-12154d670bf2);
+  background-image: url('./gir.gif');
+  /*background-image: url(https://firebasestorage.googleapis.com/v0/b/fotos-3cba1.appspot.com/o/navidad%2Fpattern-2.jpg?alt=media&token=c3ebea10-d285-4b2a-846b-12154d670bf2);*/
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -999,11 +1000,12 @@ body ul, body li {
 }
 
 .buttonContainer {
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .playButton {
+  margin-top: 10px;
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.2em;
@@ -1027,28 +1029,21 @@ body ul, body li {
   background-color: #c0392b;
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   .buttonContainer {
     position: fixed;
-    top: 5px;
+    bottom: 10px; /* Mueve el botón hacia abajo */
     left: 50%;
     transform: translateX(-50%);
+    width: auto; /* Elimina restricciones de ancho */
     z-index: 99999;
-    width: 100%;
   }
 
   .playButton {
-    position: relative; /* Relativo al contenedor */
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 99999;
-
+    margin: 0; /* Elimina cualquier margen */
+    position: relative;
   }
 }
-
-
 
 .garland {
   position: fixed;
@@ -1094,5 +1089,23 @@ body ul, body li {
   100% {
     background-color: #1b35c8;
     box-shadow: 0 0 30px #63cedf;
+  }
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .buttonContainer {
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+  }
+
+  .playButton {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
