@@ -1029,21 +1029,6 @@ body ul, body li {
   background-color: #c0392b;
 }
 
-@media (max-width: 600px) {
-  .buttonContainer {
-    position: fixed;
-    bottom: 10px; /* Mueve el botón hacia abajo */
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto; /* Elimina restricciones de ancho */
-    z-index: 99999;
-  }
-
-  .playButton {
-    margin: 0; /* Elimina cualquier margen */
-    position: relative;
-  }
-}
 
 .garland {
   position: fixed;
